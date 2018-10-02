@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Redirect} from 'react-router-dom';
 
 class Login extends Component {
+    
     loginUser = (event) => {
         event.preventDefault();
         let username = event.target[0].value

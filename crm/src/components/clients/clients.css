@@ -1,0 +1,43 @@
+.clientsContainer{
+    padding: 20px;
+}
+.clientNav {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    color: black;
+    background-color: rgb(240, 131, 119);
+    height: 45px;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    box-shadow: 2px 2px 2px 2px #888888;
+    margin-top: 5px;
+
+}
+.searchInput{
+    border: none;
+    height: 40px;
+    background-color:rgb(233, 231, 231);
+    width: 15%;
+    font-size: 20px;
+    padding-left: 10px
+
+}
+.detailsBox{
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    height: 45px;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    align-items: center;
+    box-shadow: 0px 0px 1px 0px #888888;
+    padding-top: 5px;
+}
+.cell{
+    width: 14.2%;
+}
