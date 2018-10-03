@@ -9,6 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
+const axios = require('axios')
 library.add(faCheck);
 
 class App extends Component {
@@ -30,10 +31,12 @@ class App extends Component {
       location: location
     })
   }
-  updateClientData = (data) => {
-    this.setState({
-      clientData: data
-    })
+  updateClientData = async() => {
+    let data = await axios.get('http://localhost:8080/clients')
+      this.setState({
+        clientData: data.data
+      }, ()=>console.log(data)
+    )
   }
 
   render() {
