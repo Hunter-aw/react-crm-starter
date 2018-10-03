@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import AddClient from './AddClient'
+import UpdateClient from'./UpdateClient'
+import './actions.css'
 
 class Actions extends Component {
     componentDidMount() {
@@ -8,12 +11,8 @@ class Actions extends Component {
     render() {
         return(
             <div>
-                <div>
-
-                </div>
-                <div>
-                    
-                </div>
+                <UpdateClient/>
+                <AddClient/>
             </div>
         )
     }

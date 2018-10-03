@@ -4,13 +4,13 @@ class ClientNav extends Component {
     render() {
         return(
             <div className = "clientNav">
-                <span>Name</span>
-                <span>Surname</span>
-                <span>Country</span>
-                <span>First Contact</span>
-                <span>Email</span>
-                <span>Sold</span>
-                <span>Owner</span>
+                <span className="cell1">Name</span>
+                <span className="cell2">Surname</span>
+                <span className="cell3">Country</span>
+                <span className="cell4">First Contact</span>
+                <span className="cell5">Email</span>
+                <span className="cell6">Sold</span>
+                <span className="cell7">Owner</span>
             </div>
         )
     }

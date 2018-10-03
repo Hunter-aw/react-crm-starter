@@ -1,0 +1,39 @@
+.update-client{
+    border-bottom: #2B7A78 solid 1px
+}
+.action-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px;
+    width: 40%;
+    font-size: 20px
+}
+.action-col-1{
+    grid-column: 1;
+}
+.action-col-2{
+    grid-column: 2;
+    width: 200px
+}
+.action-col-3{
+    grid-column: 3;
+    color: #2B7A78;
+    cursor: pointer;
+}
+.section-head{
+    font-size: 25px
+}
+.new-client-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px;
+    width: 25%;
+    font-size: 20px
+}
+.new-client-1{
+    grid-column: 1;
+}
+.new-client-2{
+    grid-column: 2;
+    width: 250px
+}

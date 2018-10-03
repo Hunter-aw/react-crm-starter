@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 class ClientData extends Component {
@@ -11,13 +12,13 @@ class ClientData extends Component {
         let displayDate = `${day}/${month}/${year}`
         return(
             <div className="detailsBox">
-                <span className="cell">{data.name.split(" ")[0]}</span>
-                <span className="cell">{data.name.split(" ")[1]}</span>
-                <span className="cell">{data.country}</span>
-                <span className="cell">{displayDate}</span>
-                <span className="cell">{data.emailType ? data.emailType : "-"}</span>
-                <span className="cell">{data.sold ? "yes" : "-"}</span>
-                <span>{data.owner}</span>
+                <span className="cell1">{data.name.split(" ")[0]}</span>
+                <span className="cell2">{data.name.split(" ")[1]}</span>
+                <span className="cell3">{data.country}</span>
+                <span className="cell4">{displayDate}</span>
+                <span className="cell5">{data.emailType ? data.emailType : "-"}</span>
+                <span className="cell6">{data.sold ? <FontAwesomeIcon icon="check"/> : "-"}</span>
+                <span className="cell7">{data.owner}</span>
             </div>
         )
     }

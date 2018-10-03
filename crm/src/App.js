@@ -5,7 +5,11 @@ import Actions from './components/actions/Actions';
 import Analytics from './components/analytics/Analytics'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
+library.add(faCheck);
 
 class App extends Component {
   constructor() {
