@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Redirect} from 'react-router-dom';
 
 class Login extends Component {
+    
     loginUser = (event) => {
         event.preventDefault();
         let username = event.target[0].value
@@ -10,7 +11,7 @@ class Login extends Component {
     }
     render() {
         return(
-            <div className="container">
+            <div className="loginContainer">
                 <div className="login">
                 <h1>Please Log in Below</h1>
                     <form onSubmit={this.loginUser}>

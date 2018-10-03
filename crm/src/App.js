@@ -5,37 +5,59 @@ import Actions from './components/actions/Actions';
 import Analytics from './components/analytics/Analytics'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
+library.add(faCheck);
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       location: "",
-      userName: ""
+      userName: "",
+      clientData: []
     }
   }
   updateUser = (name) => {
     this.setState({
-      userName: name,
-      location: "clients"
+      userName: name
     })
   }
+  updateNavBar = (location) => {
+    this.setState({
+      location: location
+    })
+  }
+  updateClientData = (data) => {
+    this.setState({
+      clientData: data
+    })
+  }
+
   render() {
     return (
       <Router>
         <div>
           <Navbar location = {this.state.location} 
-                  name = {this.state.userName}>
+                  name = {this.state.userName}
+                  updateNavBar={this.updateNavBar}>
           </Navbar>
           <Route path ="/" exact render={() => 
             (this.state.userName ? 
               (<Redirect to="/clients"/>) : 
-              (<Login updateUser={this.updateUser}/>))}>
+              (<Login updateUser={this.updateUser}
+                      updateNavBar={this.updateNavBar}/>))}>
             </Route>
-          {/* <Route path ="/clients" exact render={() => <Clients/>}></Route> */}
-          {/* <Route path = "/actions" exact render={() => <Actions/>}></Route> */}
-          {/* <Route path = "/analytics" exact render={() => <Analytics/>}></Route> */}
+          <Route path ="/clients" exact render={() => 
+            <Clients updateNavBar={this.updateNavBar}
+                    clientData = {this.state.clientData}
+                    updateClientData = {this.updateClientData}/>}></Route>
+          <Route path = "/actions" exact render={() => 
+            <Actions updateNavBar={this.updateNavBar}/>}></Route>
+          <Route path = "/analytics" exact render={() => 
+            <Analytics updateNavBar={this.updateNavBar}/>}></Route>
         </div>
       </Router>
     );

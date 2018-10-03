@@ -1,0 +1,64 @@
+.clientNav {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 50px;
+    text-align: left;
+    color: white;
+    background-color: #2B7A78;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    /* border-right: 1px solid black; */
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    box-shadow: 2px 2px 2px 2px #888888;
+    margin-top: 5px;
+
+}
+.searchInput{
+    border: none;
+    height: 40px;
+    background-color:#FeFFFF;
+    width: 15%;
+    font-size: 20px;
+    padding-left: 10px
+
+}
+.detailsBox{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 50px;
+    text-align: justify;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    align-items: center;
+    padding-top: 5px;
+    background-color: #DEF2F1;
+    box-shadow: 2px 2px 2px 2px #888888;
+
+}
+.cell1{
+    grid-column: 1;
+}
+.cell2{
+    grid-column: 2;
+}
+.cell3{
+    grid-column: 3;
+}
+.cell4{
+    grid-column: 4;
+}
+.cell5{
+    grid-column: 5;
+}
+.cell6{
+    grid-column: 6;
+}
+.cell7{
+    grid-column: 7;
+}
+.underline{
+    border-bottom: #2B7A78 solid 1px;
+    margin-bottom: 10px
+}

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 
 class Navbar extends Component {
+    updateNavBar = () => {
+       this.props.updateNavBar("")
+    } 
+
     render() {
         return(
             <nav>
