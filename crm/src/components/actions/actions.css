@@ -20,6 +20,9 @@
     color: #2B7A78;
     cursor: pointer;
 }
+.action-col-3:active{
+    color: #66FCF1
+}
 .section-head{
     font-size: 25px
 }

@@ -12,7 +12,8 @@ class Actions extends Component {
         return(
             <div>
                 <UpdateClient generateClients={this.props.generateClients}
-                              addClient={this.props.addClient}/>
+                              addClient={this.props.addClient}
+                              generateOwners={this.props.generateOwners}/>
                 <AddClient generateOwners={this.props.generateOwners}
                             addClient={this.props.addClient}/>
             </div>

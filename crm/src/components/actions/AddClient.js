@@ -36,7 +36,8 @@ class AddClient extends Component {
                                 <span className="new-client-1">Owner: </span>
                                 <select className="searchInput underline new-client-2" 
                                         name="Owner"
-                                        onChange={this.handleInput}>
+                                        onChange={this.handleInput}
+                                        value = {this.state.Owner}>
                                     {this.props.generateOwners().map((o)=><option>{o}</option>)}
                                 </select>
                             </div>

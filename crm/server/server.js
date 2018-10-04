@@ -37,7 +37,6 @@ app.listen(process.env.PORT || `${SERVER_PORT}`, () => {
 
 // for (let client of data) {
 //     let newClient = new Client ({
-//         _id: client._id,
 //         name: client.name,
 //         email: client.email,
 //         firstContact: client.firstContact,
