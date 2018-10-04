@@ -11,8 +11,11 @@ class Actions extends Component {
     render() {
         return(
             <div>
-                <UpdateClient/>
-                <AddClient/>
+                <UpdateClient generateClients={this.props.generateClients}
+                              addClient={this.props.addClient}
+                              generateOwners={this.props.generateOwners}/>
+                <AddClient generateOwners={this.props.generateOwners}
+                            addClient={this.props.addClient}/>
             </div>
         )
     }

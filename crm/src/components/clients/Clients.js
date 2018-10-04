@@ -6,20 +6,18 @@ import ClientsSection from './ClientsSection'
 import ReactPaginate from 'react-paginate'
 import './clients.css'
 
+
 class Clients extends Component {
-    constructor( props ) {
-        super( props )
+    constructor() {
+        super()
         this.state = {
-            clientData: props.clientData,
             pageCount: 1
         }
     }
     componentDidMount () {
-        this.props.updateNavBar("clients")
-        setTimeout(() => {
-            let data = require('../../data.json');
-            this.setState({clientData: data})
-          }, 100)
+        const data = this.props.clientData
+        this.props.updateNavBar("clients");
+        this.props.updateClientData()
     }
     // loadCommentsFromServer() {
     //     $.ajax({
@@ -48,11 +46,13 @@ class Clients extends Component {
     // };
 
     render() {
+        console.log("rendering")
+        console.log(this.props.clientData)
         return(
             <div className="container">
                 <SearchClients/>
                 <ClientNav/>
-                <ClientsSection data = {this.state.clientData}/>
+                <ClientsSection data = {this.props.clientData}/>
                 <ReactPaginate previousLabel={"previous"}
                     nextLabel={"next"}
                     breakLabel={<a href="">...</a>}
