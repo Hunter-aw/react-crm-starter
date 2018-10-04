@@ -15,4 +15,19 @@ router.get('/clients', (req, res) => {
     })
 })
 
+router.post('/newclient', (req, res) => {
+    console.log(req.body)
+    let newClient = new Client ({
+        name: req.body.name,
+        email: req.body.email,
+        firstContact: new Date().toString(),
+        emailType: "",
+        sold: false,
+        owner: req.body.owner,
+        country: req.body.country
+    })
+    newClient.save()
+    res.send(newClient)
+})
+
 module.exports = router

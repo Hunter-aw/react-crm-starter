@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 const clientSchema = new Schema({
-    _id: String,
     name: String,
     email: String,
     firstContact: String,

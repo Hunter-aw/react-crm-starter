@@ -38,6 +38,25 @@ class App extends Component {
       }, ()=>console.log(data)
     )
   }
+  addClient = async(name, surname, country, email, owner) => {
+    await axios.post('http://localhost:8080/newclient', {
+        name: `${name} ${surname}`,
+        country: country,
+        email: email,
+        owner: owner
+    })
+    // console.log(client)
+    this.updateClientData()
+
+  }
+  generateOwners =() => {
+    const ownersList = [...new Set(this.state.clientData.map(client => client.owner))]
+    return ownersList
+  }
+  generateClients =() => {
+    const clientList = [...new Set(this.state.clientData.map(client => client.name))]
+    return clientList
+  }
 
   render() {
     return (
@@ -55,10 +74,15 @@ class App extends Component {
             </Route>
           <Route path ="/clients" exact render={() => 
             <Clients updateNavBar={this.updateNavBar}
-                    clientData = {this.state.clientData}
-                    updateClientData = {this.updateClientData}/>}></Route>
+                     clientData = {this.state.clientData}
+                     updateClientData = {this.updateClientData}/>}>
+          </Route>
           <Route path = "/actions" exact render={() => 
-            <Actions updateNavBar={this.updateNavBar}/>}></Route>
+            <Actions updateNavBar={this.updateNavBar}
+                     generateClients={this.generateClients}
+                     generateOwners={this.generateOwners}
+                     addClient={this.addClient}/>}>
+          </Route>
           <Route path = "/analytics" exact render={() => 
             <Analytics updateNavBar={this.updateNavBar}/>}></Route>
         </div>
