@@ -1,0 +1,29 @@
+.analyticsGrid{
+    display: grid;
+    grid-template: 1fr 2fr 2fr / 1fr;
+}
+
+.medalions {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px
+}
+.medalion{
+    border-radius: 50%;
+    font-size: 100px;
+    height: 100px;
+    padding: 20px;
+    color: white
+}
+.chart{
+    background-color: mediumseagreen
+}
+.envelope{
+    background-color: mediumslateblue
+}
+.user{
+    background-color: mediumvioletred
+}
+.globe{
+    background-color: darkgoldenrod
+}

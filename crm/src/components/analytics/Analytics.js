@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import Medalions from './Medalions';
+
+import './analytics.css'
 
 class Analytics extends Component {
     componentDidMount() {
@@ -7,7 +10,10 @@ class Analytics extends Component {
     }
     render() {
         return(
-            <div>yo</div>
+            <div className = 'analyticsGrid'>
+                <Medalions/>
+                {/* <Charts/> */}
+            </div>
         )
     }
 }

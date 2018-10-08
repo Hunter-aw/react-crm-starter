@@ -7,10 +7,10 @@ import Login from './components/Login'
 import Navbar from './components/Navbar'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faMailBulk, faEnvelope, faUser, faUserCircle, faUserSecret, faUserPlus, faUserCog, faChartLine, faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
 const axios = require('axios')
-library.add(faCheck);
+library.add(faCheck, faChartLine, faEnvelope, faUserCircle, faGlobeAmericas);
 
 class App extends Component {
   constructor() {
