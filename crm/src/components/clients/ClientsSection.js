@@ -5,7 +5,7 @@ class ClientSection extends Component {
     render() {
         return(
             <div className="clientSection">
-                {this.props.data.map(d => 
+                {this.props.data().map(d => 
                 <ClientData id={d._id} data = {d}/>)}
             </div>
         )

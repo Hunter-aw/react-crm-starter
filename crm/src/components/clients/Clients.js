@@ -11,7 +11,9 @@ class Clients extends Component {
     constructor() {
         super()
         this.state = {
-            pageCount: 1
+            pageCount: 1,
+            searchTerm: "",
+            searchType: "name"
         }
     }
     componentDidMount () {
@@ -44,15 +46,32 @@ class Clients extends Component {
     //       this.loadCommentsFromServer();
     //     });
     // };
+    handleSearchTerm = (searchTerm) => {
+        this.setState({
+            searchTerm: searchTerm.toLowerCase()
+        })
+    }
+    handleSearchType = (searchType) => {
+        this.setState({
+            searchType: searchType
+        })
+    }
+    searchClients = () => {
+        let data = this.props.clientData
+        // let searchType = this.state.searchType
+        let searchTerm = this.state.searchTerm
+        let searchedData= data.filter(client => client.name.includes(searchTerm))
+        return searchedData
+    }
 
     render() {
         console.log("rendering")
         console.log(this.props.clientData)
         return(
             <div className="container">
-                <SearchClients/>
+                <SearchClients handleSearchTerm={this.handleSearchTerm} handleSearchType={this.handleSearchType}/>
                 <ClientNav/>
-                <ClientsSection data = {this.props.clientData}/>
+                <ClientsSection data = {this.searchClients}/>
                 <ReactPaginate previousLabel={"previous"}
                     nextLabel={"next"}
                     breakLabel={<a href="">...</a>}
